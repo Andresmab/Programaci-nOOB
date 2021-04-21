@@ -1,0 +1,203 @@
+//Triqui
+uvariableReservadang namespace std
+//Función que determina si termina el juego y quien ha ganado o si hubo un empate
+SubProceso FIN( A[][3],  H,  C)
+Si (((A[0][0]==0) y (A[0][1]==0) y (A[0][2]==0))||((A[1][0]==0) y (A[1][1]==0) y (A[1][2]==0))||((A[2][0]==0) y (A[2][1]==0) y (A[2][2]==0))||((A[0][0]==0) y (A[1][0]==0) y (A[2][0]==0))||((A[0][1]==0) y (A[1][1]==0) y (A[2][1]==0))||((A[0][2]==0) y (A[1][2]==0) y (A[2][2]==0))||((A[0][0]==0) y (A[1][1]==0) y (A[2][2]==0))||((A[0][2]==0) y (A[1][1]==0) y (A[2][0]==0)))
+SiNo Si (((A[0][0]==-1) y (A[0][1]==-1) y (A[0][2]==-1))||((A[1][0]==-1) y (A[1][1]==-1) y (A[1][2]==-1))||((A[2][0]==-1) y (A[2][1]==-1) y (A[2][2]==-1))||((A[0][0]==-1) y (A[1][0]==-1) y (A[2][0]==-1))||((A[0][1]==-1) y (A[1][1]==-1) y (A[2][1]==-1))||((A[0][2]==-1) y (A[1][2]==-1) y (A[2][2]==-1))||((A[0][0]==-1) y (A[1][1]==-1) y (A[2][2]==-1))||((A[0][2]==-1) y (A[1][1]==-1) y (A[2][0]==-1)))
+SiNo Si (h+c==9)
+SiNo
+FinSi
+FinSi
+//Función que determina si el computador puede marcar una casilla para ganar
+SubProceso PGC( A[][3])
+Si (((A[0][0]==1) y (A[0][1]==-1) y (A[0][2]==-1))||((A[0][0]==1) y (A[1][0]==-1) y (A[2][0]==-1))||((A[0][0]==1) y (A[1][1]==-1) y (A[2][2]==-1)))
+SiNo Si (((A[0][0]==-1) y (A[0][1]==2) y (A[0][2]==-1))||((A[0][1]==2) y (A[1][1]==-1) y (A[2][1]==-1)))
+SiNo Si (((A[0][0]==-1) y (A[0][1]==-1) y (A[0][2]==3))||((A[0][2]==3) y (A[1][2]==-1) y (A[2][2]==-1))||((A[0][2]==3) y (A[1][1]==-1) y (A[2][0]==-1)))
+SiNo Si (((A[1][0]==4) y (A[1][1]==-1) y (A[1][2]==-1))||((A[0][0]==-1) y (A[1][0]==4) y (A[2][0]==-1)))
+SiNo Si (((A[1][0]==-1) y (A[1][1]==5) y (A[1][2]==-1))||((A[0][1]==-1) y (A[1][1]==5) y (A[2][1]==-1))||((A[0][0]==-1) y (A[1][1]==5) y (A[2][2]==-1))||((A[0][2]==-1) y (A[1][1]==5) y (A[2][0]==-1)))
+SiNo Si (((A[1][0]==-1) y (A[1][1]==-1) y (A[1][2]==6))||((A[0][2]==-1) y (A[1][2]==6) y (A[2][2]==-1)))
+SiNo Si (((A[2][0]==7) y (A[2][1]==-1) y (A[2][2]==-1))||((A[0][0]==-1) y (A[1][0]==-1) y (A[2][0]==7))||((A[0][2]==-1) y (A[1][1]==-1) y (A[2][0]==7)))
+SiNo Si (((A[2][0]==-1) y (A[2][1]==8) y (A[2][2]==-1))||((A[0][1]==-1) y (A[1][1]==-1) y (A[2][1]==8)))
+SiNo Si (((A[2][0]==-1) y (A[2][1]==-1) y (A[2][2]==9))||((A[0][2]==-1) y (A[1][2]==-1) y (A[2][2]==9))||((A[0][0]==-1) y (A[1][1]==-1) y (A[2][2]==9)))
+SiNo
+FinSi
+//Función que determina si el humano va a ganar, para que así la maquina lo impida si es posible, y así hacer más competitiva a la máquina
+SubProceso PGH( A[][3])
+Si (((A[0][0]==1) y (A[0][1]==0) y (A[0][2]==0))||((A[0][0]==1) y (A[1][0]==0) y (A[2][0]==0))||((A[0][0]==1) y (A[1][1]==0) y (A[2][2]==0)))
+SiNo Si (((A[0][0]==0) y (A[0][1]==2) y (A[0][2]==0))||((A[0][1]==2) y (A[1][1]==0) y (A[2][1]==0)))
+SiNo Si (((A[0][0]==0) y (A[0][1]==0) y (A[0][2]==3))||((A[0][2]==3) y (A[1][2]==0) y (A[2][2]==0))||((A[0][2]==3) y (A[1][1]==0) y (A[2][0]==0)))
+SiNo Si (((A[1][0]==4) y (A[1][1]==0) y (A[1][2]==0))||((A[0][0]==0) y (A[1][0]==4) y (A[2][0]==0)))
+SiNo Si (((A[1][0]==0) y (A[1][1]==5) y (A[1][2]==0))||((A[0][1]==0) y (A[1][1]==5) y (A[2][1]==0))||((A[0][0]==0) y (A[1][1]==5) y (A[2][2]==0))||((A[0][2]==0) y (A[1][1]==5) y (A[2][0]==0)))
+SiNo Si (((A[1][0]==0) y (A[1][1]==0) y (A[1][2]==6))||((A[0][2]==0) y (A[1][2]==6) y (A[2][2]==0)))
+SiNo Si (((A[2][0]==7) y (A[2][1]==0) y (A[2][2]==0))||((A[0][0]==0) y (A[1][0]==0) y (A[2][0]==7))||((A[0][2]==0) y (A[1][1]==0) y (A[2][0]==7)))
+SiNo Si (((A[2][0]==0) y (A[2][1]==8) y (A[2][2]==0))||((A[0][1]==0) y (A[1][1]==0) y (A[2][1]==8)))
+SiNo Si (((A[2][0]==0) y (A[2][1]==0) y (A[2][2]==9))||((A[0][2]==0) y (A[1][2]==0) y (A[2][2]==9))||((A[0][0]==0) y (A[1][1]==0) y (A[2][2]==9)))
+SiNo
+FinSi
+Algoritmo nombre
+//Se imprimen las instrucciones
+cout<<"Instrucciones:\nSe lanzaran dados para determinar quien inicia.\nPosteriormente empezara la partida, seleccione una cavariableReservadalla entre el 1 y el 9 para marcarla.\nEl que logre marcar 3 cavariableReservadallas en linea sera el ganador.\nSuerte!\n\n"
+//Se declaran las variables
+Mientras play==0
+{
+1,2,3,4,5,6,7,8,9
+FinMientras
+{
+' ',
+FinSi
+FinSi
+h=0
+c=0
+//Cambia el color del texto y el fondo
+cout<<"Seleccione un color de fondo\n1= Negro\n2= Aguamarina\n3= Amarillo\n4= Gris\n5= Rojo\n"
+cin>>color
+Mientras color!=1&&color!=2&&color!=3&&color!=4&&color!=5
+cout<<"Digite un numero valido\n\n"
+cin>>color
+FinMientras
+Segun  color Hacer
+1:
+color 0C
+2:
+color 3E
+3:
+color 6F
+4:
+color 8E
+5:
+color CF
+FinSegun
+cout<<"\n"
+//Se imprime una tabla guía para el jugador
+cout<<"Tabla guia:\n\n\t"
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+cout<<"|"<<A[i][j]
+FinPara
+cout<<"|\n\t"
+FinPara
+cout<<"\n"
+//Se generan 2 números aleatoriorios representando los dados del jugador y la maquina
+d=0
+dm=0
+Mientras d==dm
+d=1)+Azar(6)
+dm=1)+Azar(6)
+FinMientras
+dado=0
+Mientras dado!=1
+cout<<"Digite '1' para lanzar el dado\n"
+cin>>dado
+FinMientras
+cout<<"\n"
+cout<<"El jugador lanza un dado: "<<d<<"\n\n"
+cout<<"La maquina lanza un dado: "<<dm<<"\n\n"
+//El jugador o la maquina marcan la primera casilla
+Si (d<dm)
+cout<<"La maquina inicia el juego\n\n\t"
+C=1)+Azar(9)
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+Si (A[i][j]==C)
+A[i][j]=-1
+B[i][j]='C'
+c=c+1
+FinSi
+FinPara
+FinPara
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+cout<<"|"<<B[i][j]
+FinPara
+cout<<"|\n\t"
+FinPara
+cout<<"\n"
+SiNo
+cout<<"El jugador inicia el juego\n\n"
+FinSi
+//Se crea un bucle que se repetira hasta que el juego termine, en el cual los jugadores marcarán casillas
+Mientras FinAhc==false
+hm=h+1
+Si ((Fin(Ahc))==false)
+cout<<"Su turno, elija una cavariableReservadalla: "
+Mientras h!=hm
+h1=0
+cin>>H
+cout<<"\n"
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+h1=h1+1
+Si (A[i][j]==H)
+A[i][j]=0
+B[i][j]='H'
+h=h+1
+SiNo Si (h1==H)
+cout<<"Esa cavariableReservadalla ya ha variableReservadado seleccionada, elija otra: "
+FinSi
+FinSi
+FinPara
+FinPara
+FinMientras
+FinSi
+cout<<"\t"
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+cout<<"|"<<B[i][j]
+FinPara
+cout<<"|\n\t"
+FinPara
+cout<<"\n"
+cm=c+1
+Si ((Fin(Ahc))==false)
+cout<<"Turno de la maquina\n\n\t"
+Mientras c!=cm
+C=1)+Azar(9)
+Si (PGH(A)!=false)
+C=PGH(A)
+FinSi
+Si (PGC(A)!=false)
+C=PGC(A)
+FinSi
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+Si (A[i][j]==C)
+A[i][j]=-1
+B[i][j]='C'
+c=c+1
+FinSi
+FinPara
+FinPara
+FinMientras
+Para i=0 Hasta 3 Con Paso 1
+Para j=0 Hasta 3 Con Paso 1
+cout<<"|"<<B[i][j]
+FinPara
+cout<<"|\n\t"
+FinPara
+cout<<"\n"
+FinSi
+FinMientras
+//Se determina quien gana o si hay un empate y se pregunta si desea volver a jugar
+Si (Fin(A h c)==1)
+cout<<"El ganador es: Humano\n\n"
+SiNo Si (Fin(A h c)==11)
+cout<<"El ganador es: Computador\n\n"
+SiNo
+cout<<"Se ha producido un empate\n\n"
+FinSi
+FinSi
+cout<<"Desea Jugar Nuevamente?  0 = variableReservada / 1 = No: "
+cin>>play
+Mientras play!=1&&play!=0
+cout<<"Digite un numero valido\n\n"
+cin>>play
+FinMientras
+cout<<"\n"
+FinSi
+FinSi
+FinSi
+FinSi
+
+ta bueno
+xdxdxdxd
+xdxdxdxd
